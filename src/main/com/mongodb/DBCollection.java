@@ -1823,8 +1823,6 @@ public abstract class DBCollection {
     private void validateKey(String s ) {
         if ( s.contains( "\0" ) )
             throw new IllegalArgumentException( "Document field names can't have a NULL character. (Bad Key: '" + s + "')" );
-        if ( s.contains( "." ) )
-            throw new IllegalArgumentException( "Document field names can't have a . in them. (Bad Key: '" + s + "')" );
         if ( s.startsWith( "$" ) )
             throw new IllegalArgumentException( "Document field names can't start with '$' (Bad Key: '" + s + "')" );
     }
